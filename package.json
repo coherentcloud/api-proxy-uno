@@ -4,6 +4,7 @@
   "description": "demo backend api proxy",
   "main": "index.js",
   "scripts": {
+    "build": "",
     "start": "node index",
     "dev": "nodemon index"
   },
