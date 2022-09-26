@@ -29,12 +29,11 @@ const fetchQuotes = async (symbolInput) => {
     priceInDollars: stringToDollars(rawPrice),
     previous: rawPrevious,
     previousInDollars: stringToDollars(rawPrevious),
-    dailyChange: dailyChange(rawPrice, rawPrevious),
+    dailyChange: data['Global Quote']['10. change percent'],
     lasttradingdate: data['Global Quote']['07. latest trading day'],
   }
 
   addResultsToDOM(displayData)
-  //responseJSON.innerHTML = `<p>${JSON.stringify(data, null, 2)}</p>`
 
 }
 
@@ -56,20 +55,6 @@ const stringToDollars = (price) => {
     style: 'currency',
     currency: 'USD',})
   return formatter.format(price)
-}
-
-const dailyChange = (current, previous) => {
-
-  if(previous===current)
-    return '0%';
-
-  if(previous>current)
-  {
-    var net = (100-(current / previous) * 100);
-    return '-'+net.toFixed(2) + '%';
-  }
-  return '+'+((current / previous) * 100).toFixed(2) + '%';
-
 }
 
 // Event listener for form submission
