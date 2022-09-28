@@ -2,11 +2,11 @@
   "name": "api-proxy-uno",
   "version": "1.0.0",
   "description": "demo backend api proxy",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "",
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "author": "Guillermo Salas",
   "license": "MIT",
